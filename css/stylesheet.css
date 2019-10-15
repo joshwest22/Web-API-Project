@@ -1,0 +1,27 @@
+body
+{
+    background-image: url("../imgs/starsbg.png");
+    color: #ffe81f
+}
+#banner1
+{
+    text-align: center;
+}
+#filmList
+{
+    color: white;
+}
+#light,#dark
+{
+    font-size: 25px;
+}
+#light
+{
+    color:lightblue;
+    font-weight:bold;
+}
+#dark
+{
+    color:darkred;
+    font-weight: bold;
+}
