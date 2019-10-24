@@ -25,3 +25,11 @@ body
     color:darkred;
     font-weight: bold;
 }
+#light:hover
+{
+    background-color: royalblue;
+}
+#dark:hover
+{
+    background-color: darkred;
+}
