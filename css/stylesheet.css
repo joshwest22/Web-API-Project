@@ -1,7 +1,9 @@
 body
 {
     background-image: url("../imgs/starsbg.png");
-    color: #ffe81f
+    color: #ffe81f;
+    cursor: url(oth28.cur), auto;
+    
 }
 #banner1
 {
@@ -19,11 +21,17 @@ body
 {
     color:lightblue;
     font-weight:bold;
+    width: 5%;
+    text-align: center;
+    cursor: url(oth25.cur), auto;
 }
 #dark
 {
-    color:darkred;
+    color:red;
     font-weight: bold;
+    width: 5%;
+    text-align: center;
+    cursor: url(darthmaulnormal.cur), auto;
 }
 #light:hover
 {
@@ -31,5 +39,5 @@ body
 }
 #dark:hover
 {
-    background-color: darkred;
+    background-color: #820000;
 }
