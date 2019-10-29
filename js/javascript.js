@@ -3,16 +3,17 @@ var setBanner = function(message)
     d3.select("#bannerTitle")
     .text(message)
 }
-
+var consoleFilms = [];
 var filmPromise=
 d3.json("https://swapi.co/api/films/")
-//d3.json("https://ghibliapi.herokuapp.com/films")
+//d3.json("https://ghibliapi.herokuapp.com/films") //Works with this API bc array, but not with Star Wars
 
 filmPromise.then(
 function(films)
-{
+{   
+    consoleFilms = films; // DO NOT USE FOR CODING; Works for console
     setBanner("STAR WARS API");
-    getFilmList(films);
+    getFilmList(films.results);// Passes the actual array to the rest of the "films" in the program
     console.log("films", films)
 },
 function(err)
