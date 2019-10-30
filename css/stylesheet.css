@@ -104,3 +104,8 @@ body
 {
     background-color: #3e8e41;
 }
+
+#filmTitle:hover
+{
+    background-color: rgb(255, 255, 255, .37)
+}

@@ -17,28 +17,232 @@ function(films)
     getFilmList(films.results);// Passes the actual array to the rest of the "films" in the program
     console.log("films", films)
     
-    var charUrls = films.results[0].characters;
-    console.log("charUrls",charUrls);
+    var charUrls0 = films.results[0].characters;
+    console.log("charUrls0",charUrls0);
     
-    var charPromises = charUrls.map(function(charUrls)
+    var charUrls1 = films.results[1].characters;
+    console.log("charUrls1",charUrls1);
+    
+    var charUrls2 = films.results[2].characters;
+    console.log("charUrls2",charUrls2);
+    
+    var charUrls3 = films.results[3].characters;
+    console.log("charUrls3",charUrls3);
+    
+    var charUrls4 = films.results[4].characters;
+    console.log("charUrls4",charUrls4);
+    
+    var charUrls5 = films.results[5].characters;
+    console.log("charUrls5",charUrls5);
+    
+    var charUrls6 = films.results[6].characters;
+    console.log("charUrls6",charUrls6);
+    
+    var charPromises = charUrls0.map(function(charUrls0)
     {
         console.log("charPromises", charPromises);
-        return d3.json(charUrls);       
+        return d3.json(charUrls0);       
     })
     
+     var charPromises1 = charUrls1.map(function(charUrls1)
+    {
+        console.log("charPromises1", charPromises1);
+        return d3.json(charUrls1);       
+    })
+     
+     var charPromises2 = charUrls2.map(function(charUrls2)
+    {
+        console.log("charPromises2", charPromises2);
+        return d3.json(charUrls2);       
+    })
+     
+     var charPromises3 = charUrls3.map(function(charUrls3)
+    {
+        console.log("charPromises3", charPromises3);
+        return d3.json(charUrls3);       
+    })
+     
+     var charPromises4 = charUrls4.map(function(charUrls4)
+    {
+        console.log("charPromises4", charPromises4);
+        return d3.json(charUrls4);       
+    })
+     
+     var charPromises5 = charUrls5.map(function(charUrls5)
+    {
+        console.log("charPromises5", charPromises5);
+        return d3.json(charUrls5);       
+    })
+     
+     var charPromises6 = charUrls6.map(function(charUrls6)
+    {
+        console.log("charPromises6", charPromises6);
+        return d3.json(charUrls6);       
+    })
+     
     Promise.all(charPromises).then(function(values)
+    {
+        console.log("values",values);//gets the array of characters
+        d3.select("#filmList")
+        .on("click", function(d)
+        {
+        clearInfo("#charName") //clears the character name from previous films
+        d3.select("#characterList")
+        .selectAll("li")
+        .data(values)
+        .enter()
+        .append("span")
+        .attr("id", "characters")
+        .append("ul")
+        .append("li")
+        .attr("id", "charName")
+        .text(function(movie)
+        {
+            return movie.name
+        })
+        })
+        
+    })
+    
+    Promise.all(charPromises1).then(function(values)
     {
         console.log("values",values);//gets the array of characters
         d3.select("#filmList")
         .on("click", function(d){
         clearInfo("#charName") //clears the character name from previous films
         d3.select("#characterList")
+        .selectAll("li")
+        .data(values)
+        .enter()
         .append("span")
         .attr("id", "characters")
         .append("ul")
         .append("li")
         .attr("id", "charName")
-        .text(values[0].name)
+        .text(function(movie)
+        {
+            return movie.name
+        })
+        })
+        
+    }) 
+    
+    Promise.all(charPromises2).then(function(values)
+    {
+        console.log("values",values);//gets the array of characters
+        d3.select("#filmList")
+        .on("click", function(d)
+        {
+        clearInfo("#charName") //clears the character name from previous films
+        d3.select("#characterList")
+        .selectAll("li")
+        .data(values)
+        .enter()
+        .append("span")
+        .attr("id", "characters")
+        .append("ul")
+        .append("li")
+        .attr("id", "charName")
+        .text(function(movie)
+        {
+            return movie.name
+        })
+        })
+        
+    })
+    
+    Promise.all(charPromises3).then(function(values)
+    {
+        console.log("values",values);//gets the array of characters
+        d3.select("#filmList")
+        .on("click", function(d)
+        {
+        clearInfo("#charName") //clears the character name from previous films
+        d3.select("#characterList")
+        .selectAll("li")
+        .data(values)
+        .enter()
+        .append("span")
+        .attr("id", "characters")
+        .append("ul")
+        .append("li")
+        .attr("id", "charName")
+        .text(function(movie)
+        {
+            return movie.name
+        })
+        })
+        
+    })
+    
+    Promise.all(charPromises4).then(function(values)
+    {
+        console.log("values",values);//gets the array of characters
+        d3.select("#filmList")
+        .on("click", function(d)
+        {
+        clearInfo("#charName") //clears the character name from previous films
+        d3.select("#characterList")
+        .selectAll("li")
+        .data(values)
+        .enter()
+        .append("span")
+        .attr("id", "characters")
+        .append("ul")
+        .append("li")
+        .attr("id", "charName")
+        .text(function(movie)
+        {
+            return movie.name
+        })
+        })
+        
+    })
+    
+    Promise.all(charPromises5).then(function(values)
+    {
+        console.log("values",values);//gets the array of characters
+        d3.select("#filmList")
+        .on("click", function(d)
+        {
+        clearInfo("#charName") //clears the character name from previous films
+        d3.select("#characterList")
+        .selectAll("li")
+        .data(values)
+        .enter()
+        .append("span")
+        .attr("id", "characters")
+        .append("ul")
+        .append("li")
+        .attr("id", "charName")
+        .text(function(movie)
+        {
+            return movie.name
+        })
+        })
+        
+    })
+    
+    Promise.all(charPromises6).then(function(values)
+    {
+        console.log("values",values);//gets the array of characters
+        d3.select("#filmList")
+        .on("click", function(d)
+        {
+        clearInfo("#charName") //clears the character name from previous films
+        d3.select("#characterList")
+        .selectAll("li")
+        .data(values)
+        .enter()
+        .append("span")
+        .attr("id", "characters")
+        .append("ul")
+        .append("li")
+        .attr("id", "charName")
+        .text(function(movie)
+        {
+            return movie.name
+        })
         })
         
     })
@@ -57,7 +261,8 @@ var getFilmList = function(films)
     .enter()
     .append("div")
     .text(function(film){return film.title})
-    .attr("class", function(d) {return d.episode_id}) //gives each film a unique class tag
+    .attr("class", function(d) {return d.episode_id})
+    .attr("id", "filmTitle")//gives each film a unique class tag
     //.on("click", function(){alert("WORKS")}) 
     .on("click", function(film){
        console.log("clicked");
@@ -105,7 +310,7 @@ var getInfoList = function(film)
     .append("h1")
     .text(film.title + " ")
     .attr("style", "font-size: 40px; text-decoration: underline;")
-    
+    var clicked = 0;
     d3.select("#infoList")
     .append("span")
     .text("Opening crawl")
@@ -117,6 +322,7 @@ var getInfoList = function(film)
             .append("p")
             .text('"' + crawl + '"')
             .attr("class", "openingCrawl")
+            
         }
        )
 }
