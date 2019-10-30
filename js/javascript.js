@@ -87,13 +87,24 @@ var getInfoList = function(film)
     console.log(film);
     var crawl = film.opening_crawl;
     d3.select("#infoList")
-    .append("span")
+    .append("h1")
     .text(film.title + " ")
     .attr("style", "font-size: 40px; text-decoration: underline;")
     
     d3.select("#infoList")
     .append("span")
-    .text("Opening crawl: " + '"' + crawl + '"')
+    .text("Opening crawl")
+    .on("click", function(d)
+        {
+            d3.selectAll(".openingCrawl *")
+            .remove
+        
+            d3.select("#infoList")//subject to change
+            .append("p")
+            .text('"' + crawl + '"')
+            .attr("class", "openingCrawl")
+        }
+       )
 }
 
 var clearInfo = function()
