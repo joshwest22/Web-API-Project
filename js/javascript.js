@@ -31,9 +31,13 @@ function(films)
         console.log("values",values);//gets the array of characters
         d3.select("#filmList")
         .on("click", function(d){
+        clearInfo("#charName") //clears the character name from previous films
         d3.select("#characterList")
         .append("span")
         .attr("id", "characters")
+        .append("ul")
+        .append("li")
+        .attr("id", "charName")
         .text(values[0].name)
         })
         
