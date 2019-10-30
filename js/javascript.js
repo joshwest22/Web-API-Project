@@ -48,63 +48,62 @@ var getFilmList = function(films)
        console.log("clicked");
        //getInfoList(films);
        if(film.episode_id == "4"){
+            clearInfo();
             console.log("first movie in the list");
-            getInfoList(films);//this does what it's supposed to
+            getInfoList(films[0]);//this does what it's supposed to
             console.log(films);
-            clearInfo();}//unknown if this works
+            }
         else if(film.episode_id == "2"){
+            clearInfo();
             console.log("second movie in the list");
-            getInfoList(films[1].opening_crawl);//this displays the crawl for the first movie instead of the second movie
-            console.log(films[1].opening_crawl)} //this correctly displays the second opening_crawl
-            
+            getInfoList(films[1]);
+            console.log(films[1])} //this correctly displays the second opening_crawl
        else if(film.episode_id == "1"){
+           clearInfo();
+           getInfoList(films[2]);
            console.log("third movie in the list")}
        else if(film.episode_id == "3"){
+           clearInfo();
+           getInfoList(films[3]);
            console.log("fourth movie in the list")}
        else if(film.episode_id == "6"){
+           clearInfo();
+           getInfoList(films[4]);
            console.log("fifth movie in the list")}
        else if(film.episode_id == "5"){
+           clearInfo();
+           getInfoList(films[5]);
            console.log("sixth movie in the list")}
        else if(film.episode_id == "7"){
+           clearInfo();
+           getInfoList(films[6]);
            console.log("seventh movie in the list")}
    })
 }
 
-var getInfoList = function(films)
+var getInfoList = function(film)
 {
-    console.log("inside infolist")
+    console.log("line 76");
+    console.log(film);
+    var crawl = film.opening_crawl;
     d3.select("#infoList")
-    .selectAll("span")
-    .data(films)
-    .enter()
     .append("span")
-    .text(function(film){
-    return film.opening_crawl})//why isnt this working for the films after the first one??!?!?!
+    .text(film.title + " ")
+    .attr("style", "font-size: 40px; text-decoration: underline;")
+    
+    d3.select("#infoList")
+    .append("span")
+    .text("Opening crawl: " + '"' + crawl + '"')
 }
 
 var clearInfo = function()
 {
-    d3.select("#infoList")
-    .selectAll("div")
+    d3.selectAll("#infoList *")
     .remove()
 }
-/*
-if(film.episode_id == "4"){
-           return film.opening_crawl}
-        else if(film.episode_id == "2"){
-           return films[1].opening_crawl}
-       else if(film.episode_id == "1"){
-           return films[2].opening_crawl}
-       else if(film.episode_id == "3"){
-           return films[3].opening_crawl}
-       else if(film.episode_id == "6"){
-           return films[4].opening_crawl}
-       else if(film.episode_id == "5"){
-           return films[5].opening_crawl}
-       else if(film.episode_id == "7"){
-          return films[6].opening_crawl}
 
-*/
+
+
 /*var changeCSS = function(allegiance) // do this when light or dark is clicked
 {
     d3.select(link)

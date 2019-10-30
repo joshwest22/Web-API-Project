@@ -17,6 +17,7 @@ body
     width: 35%;
     display: inline-block;
     border: solid lime 5px;
+    clear: left;
 }
 #infoList
 {
@@ -28,6 +29,7 @@ body
     border: solid orange 5px;
     width: 60%;
     overflow: auto;
+    clear: right;
 }
 #light,#dark
 {
@@ -56,4 +58,25 @@ body
 #dark:hover
 {
     background-color: #820000;
+}
+
+
+
+.WookieButton
+{
+    background-color: #4CAF50;
+    border: none;
+    color: #FEFEFE;
+    padding: 7.5px 16px;
+    text-align: center;
+    text-decoration: none;
+    margin: 16px 8px;
+    font-size: 18px;
+    clear: right;
+    font-family: fantasy;
+}
+
+.WookieButton:hover
+{
+    background-color: #3e8e41;
 }
