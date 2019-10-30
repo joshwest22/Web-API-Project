@@ -16,8 +16,17 @@ function(films)
     setBanner("STAR WARS API");
     getFilmList(films.results);// Passes the actual array to the rest of the "films" in the program
     console.log("films", films)
-    var urls = films.results[0].opening_crawl;
+    
+    /*var urls = films.results[0].characters;
     console.log(urls);
+    var promises = urls.map(function(urls)
+    {
+        return d3.json(url);       
+    })
+    Promise.all(promises).then(function(values)
+    {
+        //do stuff
+    })*/
 },
 function(err)
 {
@@ -33,28 +42,30 @@ var getFilmList = function(films)
     .enter()
     .append("div")
     .text(function(film){return film.title})
-    .attr("class", function(d) {return d.episode_id}) //gives each film a unique class
+    .attr("class", function(d) {return d.episode_id}) //gives each film a unique class tag
     //.on("click", function(){alert("WORKS")}) 
-    .on("click", function(d){
+    .on("click", function(film){
        console.log("clicked");
        //getInfoList(films);
-       if(d.episode_id == "4"){
-            console.log("first movie in the list")
-            getInfoList(films[0]);
-           console.log(films[0])
-       }
-        else if(d.episode_id == "2"){
-            console.log("second movie in the list")
-            getInfoList(films[1])}
-       else if(d.episode_id == "1"){
+       if(film.episode_id == "4"){
+            console.log("first movie in the list");
+            getInfoList(films);//this does what it's supposed to
+            console.log(films);
+            clearInfo();}//unknown if this works
+        else if(film.episode_id == "2"){
+            console.log("second movie in the list");
+            getInfoList(films[1].opening_crawl);//this displays the crawl for the first movie instead of the second movie
+            console.log(films[1].opening_crawl)} //this correctly displays the second opening_crawl
+            
+       else if(film.episode_id == "1"){
            console.log("third movie in the list")}
-       else if(d.episode_id == "3"){
+       else if(film.episode_id == "3"){
            console.log("fourth movie in the list")}
-       else if(d.episode_id == "6"){
+       else if(film.episode_id == "6"){
            console.log("fifth movie in the list")}
-       else if(d.episode_id == "5"){
+       else if(film.episode_id == "5"){
            console.log("sixth movie in the list")}
-       else if(d.episode_id == "7"){
+       else if(film.episode_id == "7"){
            console.log("seventh movie in the list")}
    })
 }
@@ -63,14 +74,14 @@ var getInfoList = function(films)
 {
     console.log("inside infolist")
     d3.select("#infoList")
-    .selectAll("div")
+    .selectAll("span")
     .data(films)
     .enter()
     .append("span")
     .text(function(film){
-    return film.opening_crawl       
-                   })
+    return film.opening_crawl})//why isnt this working for the films after the first one??!?!?!
 }
+
 var clearInfo = function()
 {
     d3.select("#infoList")
