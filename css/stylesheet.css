@@ -3,17 +3,32 @@ body
     background-image: url("../imgs/starsbg.png");
     color: #ffe81f;
     cursor: url(oth28.cur), auto;
+    font-family: anakinmono;
     
+}
+@font-face
+{
+    font-family: starJedi;
+    src: url(StarJedi.ttf);
+}
+@font-face
+{
+    font-family: anakinmono;
+    src: url(anakinmono.ttf);
 }
 #banner1
 {
     text-align: center;
 }
+#bannerTitle
+{
+    font-family: starJedi;
+}
 #filmList
 {
     color: #ffe81f;
     font-size:25px;
-    font-family: fantasy;
+    font-family: starJedi;
     width: 35%;
     display: inline-block;
     border: solid lime 5px;
@@ -23,13 +38,22 @@ body
 {
     color: #ffe81f;
     font-size:20px;
-    font-family: fantasy;
+    font-family: anakinmono;
     display: inline-block;
     float: right;
     border: solid orange 5px;
     width: 60%;
     overflow: auto;
     clear: right;
+}
+#characterList
+{
+    border: solid skyblue 5px;
+    float: right;
+    width: 60%;
+    overflow: auto;
+    clear: right;
+    
 }
 #light,#dark
 {

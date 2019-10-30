@@ -17,16 +17,27 @@ function(films)
     getFilmList(films.results);// Passes the actual array to the rest of the "films" in the program
     console.log("films", films)
     
-    /*var urls = films.results[0].characters;
-    console.log(urls);
-    var promises = urls.map(function(urls)
+    var charUrls = films.results[0].characters;
+    console.log("charUrls",charUrls);
+    
+    var charPromises = charUrls.map(function(charUrls)
     {
-        return d3.json(url);       
+        console.log("charPromises", charPromises);
+        return d3.json(charUrls);       
     })
-    Promise.all(promises).then(function(values)
+    
+    Promise.all(charPromises).then(function(values)
     {
-        //do stuff
-    })*/
+        console.log("values",values);//gets the array of characters
+        d3.select("#filmList")
+        .on("click", function(d){
+        d3.select("#characterList")
+        .append("span")
+        .attr("id", "characters")
+        .text(values[0].name)
+        })
+        
+    })
 },
 function(err)
 {
@@ -48,34 +59,34 @@ var getFilmList = function(films)
        console.log("clicked");
        //getInfoList(films);
        if(film.episode_id == "4"){
-            clearInfo();
+            clearInfo("#infoList *");
             console.log("first movie in the list");
-            getInfoList(films[0]);//this does what it's supposed to
+            getInfoList(films[0]);
             console.log(films);
             }
         else if(film.episode_id == "2"){
-            clearInfo();
+            clearInfo("#infoList *");
             console.log("second movie in the list");
             getInfoList(films[1]);
             console.log(films[1])} //this correctly displays the second opening_crawl
        else if(film.episode_id == "1"){
-           clearInfo();
+           clearInfo("#infoList *");
            getInfoList(films[2]);
            console.log("third movie in the list")}
        else if(film.episode_id == "3"){
-           clearInfo();
+           clearInfo("#infoList *");
            getInfoList(films[3]);
            console.log("fourth movie in the list")}
        else if(film.episode_id == "6"){
-           clearInfo();
+           clearInfo("#infoList *");
            getInfoList(films[4]);
            console.log("fifth movie in the list")}
        else if(film.episode_id == "5"){
-           clearInfo();
+           clearInfo("#infoList *");
            getInfoList(films[5]);
            console.log("sixth movie in the list")}
        else if(film.episode_id == "7"){
-           clearInfo();
+           clearInfo("#infoList *");
            getInfoList(films[6]);
            console.log("seventh movie in the list")}
    })
@@ -96,8 +107,7 @@ var getInfoList = function(film)
     .text("Opening crawl")
     .on("click", function(d)
         {
-            d3.selectAll(".openingCrawl *")
-            .remove
+            clearInfo(".openingCrawl")
         
             d3.select("#infoList")//subject to change
             .append("p")
@@ -107,9 +117,9 @@ var getInfoList = function(film)
        )
 }
 
-var clearInfo = function()
+var clearInfo = function(selector)
 {
-    d3.selectAll("#infoList *")
+    d3.selectAll(selector)
     .remove()
 }
 
