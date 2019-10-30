@@ -11,7 +11,23 @@ body
 }
 #filmList
 {
-    color: white;
+    color: #ffe81f;
+    font-size:25px;
+    font-family: fantasy;
+    width: 35%;
+    display: inline-block;
+    border: solid lime 5px;
+}
+#infoList
+{
+    color: #ffe81f;
+    font-size:20px;
+    font-family: fantasy;
+    display: inline-block;
+    float: right;
+    border: solid orange 5px;
+    width: 60%;
+    overflow: auto;
 }
 #light,#dark
 {
