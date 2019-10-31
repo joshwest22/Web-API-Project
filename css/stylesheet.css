@@ -23,13 +23,13 @@ body
 }
 #bannerTitle
 {
-    font-family: starJedi;
+    font-family: anakinmono;
 }
 #filmList
 {
     color: #ffe81f;
     font-size:25px;
-    font-family: starJedi;
+    font-family: anakinmono;
     width: 35%;
     display: inline-block;
     border: solid #ffe81f 5px;

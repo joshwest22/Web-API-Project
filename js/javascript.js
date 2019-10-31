@@ -6,7 +6,6 @@ var setBanner = function(message)
 var consoleFilms = [];
 var filmPromise =
 d3.json("https://swapi.co/api/films/")
-//d3.json("https://ghibliapi.herokuapp.com/films") //Works with this API bc array, but not with Star Wars
 
 filmPromise.then(
 function(films)
@@ -88,9 +87,6 @@ function(films)
         .on("click", function(d)
         {
         clearInfo("#charName") //clears the character name from previous films
-        d3.select("#characterlist")
-        .append("h2")
-        .text("Characters")
         d3.select("#characterList")
         .selectAll("li")
         .data(values)
@@ -132,9 +128,6 @@ function(films)
         d3.select("#filmList")
         .on("click", function(d){
         clearInfo("#charName") //clears the character name from previous films
-        d3.select("#characterlist")
-        .append("h2")
-        .text("Characters")
         d3.select("#characterList")
         .selectAll("li")
         .data(values)
@@ -159,9 +152,6 @@ function(films)
         .on("click", function(d)
         {
         clearInfo("#charName") //clears the character name from previous films
-        d3.select("#characterlist")
-        .append("h2")
-        .text("Characters")
         d3.select("#characterList")
         .selectAll("li")
         .data(values)
@@ -186,9 +176,6 @@ function(films)
         .on("click", function(d)
         {
         clearInfo("#charName") //clears the character name from previous films
-        d3.select("#characterlist")
-        .append("h2")
-        .text("Characters")
         d3.select("#characterList")
         .selectAll("li")
         .data(values)
@@ -213,9 +200,6 @@ function(films)
         .on("click", function(d)
         {
         clearInfo("#charName") //clears the character name from previous films
-        d3.select("#characterlist")
-        .append("h2")
-        .text("Characters")
         d3.select("#characterList")
         .selectAll("li")
         .data(values)
@@ -240,9 +224,6 @@ function(films)
         .on("click", function(d)
         {
         clearInfo("#charName") //clears the character name from previous films
-        d3.select("#characterlist")
-        .append("h2")
-        .text("Characters")
         d3.select("#characterList")
         .selectAll("li")
         .data(values)
@@ -267,9 +248,6 @@ function(films)
         .on("click", function(d)
         {
         clearInfo("#charName") //clears the character name from previous films
-        d3.select("#characterlist")
-        .append("h2")
-        .text("Characters")
         d3.select("#characterList")
         .selectAll("li")
         .data(values)
@@ -360,6 +338,10 @@ var getInfoList = function(film)
     .append("span")
     .text("Opening crawl")
     .attr("id", "opening_crawl_title")
+    .append("p")
+    .text("Director: " + film.director)
+    .append("p")
+    .text("Producer: " + film.producer)
     .on("click", function(d)
         {
             clearInfo(".openingCrawl")
@@ -368,6 +350,7 @@ var getInfoList = function(film)
             .append("p")
             .text('"' + crawl + '"')
             .attr("class", "openingCrawl")
+            
             
         }
        )
