@@ -6,15 +6,16 @@ body
     font-family: anakinmono;
     
 }
-@font-face
-{
-    font-family: starJedi;
-    src: url(StarJedi.ttf);
-}
+
 @font-face
 {
     font-family: anakinmono;
     src: url(anakinmono.ttf);
+}
+@font-face
+{
+    font-family: starJedi;
+    src: url(StarJedi.ttf);
 }
 #banner1
 {
@@ -31,7 +32,7 @@ body
     font-family: starJedi;
     width: 35%;
     display: inline-block;
-    border: solid lime 5px;
+    border: solid #ffe81f 5px;
     clear: left;
 }
 #infoList
@@ -41,14 +42,13 @@ body
     font-family: anakinmono;
     display: inline-block;
     float: right;
-    border: solid orange 5px;
     width: 60%;
     overflow: auto;
     clear: right;
 }
 #characterList
 {
-    border: solid skyblue 5px;
+    border: solid #ffe81f 5px;
     float: right;
     width: 60%;
     overflow: auto;

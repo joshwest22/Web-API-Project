@@ -41,7 +41,8 @@ function(films)
     var charPromises = charUrls0.map(function(charUrls0)
     {
         console.log("charPromises", charPromises);
-        return d3.json(charUrls0);       
+        return d3.json(charUrls0);   
+        
     })
     
      var charPromises1 = charUrls1.map(function(charUrls1)
@@ -87,6 +88,9 @@ function(films)
         .on("click", function(d)
         {
         clearInfo("#charName") //clears the character name from previous films
+        d3.select("#characterlist")
+        .append("h2")
+        .text("Characters")
         d3.select("#characterList")
         .selectAll("li")
         .data(values)
@@ -101,7 +105,25 @@ function(films)
             return movie.name
         })
         })
-        
+        d3.select("#characterTitle")
+        .selectAll("li")
+        .data(values)
+        .enter()
+        .on("click", function(characterArray)
+        {
+            console.log("clicked")
+            console.log("character array",characterArray)
+            characterArray.name.sort(function(a,b)
+            {
+                return a.name - b.name;
+                //if ((a.name) == (b.name))
+                //{return 0}
+                //if ((a.name) < (b.name))
+               //{return -1}
+                //if ((a.name) > (b.name))
+                //{return 1}
+            })
+        })
     })
     
     Promise.all(charPromises1).then(function(values)
@@ -110,6 +132,9 @@ function(films)
         d3.select("#filmList")
         .on("click", function(d){
         clearInfo("#charName") //clears the character name from previous films
+        d3.select("#characterlist")
+        .append("h2")
+        .text("Characters")
         d3.select("#characterList")
         .selectAll("li")
         .data(values)
@@ -134,6 +159,9 @@ function(films)
         .on("click", function(d)
         {
         clearInfo("#charName") //clears the character name from previous films
+        d3.select("#characterlist")
+        .append("h2")
+        .text("Characters")
         d3.select("#characterList")
         .selectAll("li")
         .data(values)
@@ -158,6 +186,9 @@ function(films)
         .on("click", function(d)
         {
         clearInfo("#charName") //clears the character name from previous films
+        d3.select("#characterlist")
+        .append("h2")
+        .text("Characters")
         d3.select("#characterList")
         .selectAll("li")
         .data(values)
@@ -182,6 +213,9 @@ function(films)
         .on("click", function(d)
         {
         clearInfo("#charName") //clears the character name from previous films
+        d3.select("#characterlist")
+        .append("h2")
+        .text("Characters")
         d3.select("#characterList")
         .selectAll("li")
         .data(values)
@@ -206,6 +240,9 @@ function(films)
         .on("click", function(d)
         {
         clearInfo("#charName") //clears the character name from previous films
+        d3.select("#characterlist")
+        .append("h2")
+        .text("Characters")
         d3.select("#characterList")
         .selectAll("li")
         .data(values)
@@ -230,6 +267,9 @@ function(films)
         .on("click", function(d)
         {
         clearInfo("#charName") //clears the character name from previous films
+        d3.select("#characterlist")
+        .append("h2")
+        .text("Characters")
         d3.select("#characterList")
         .selectAll("li")
         .data(values)
@@ -299,6 +339,7 @@ var getFilmList = function(films)
            getInfoList(films[6]);
            console.log("seventh movie in the list")}
    })
+    
 }
 
 var getInfoList = function(film)
@@ -308,10 +349,14 @@ var getInfoList = function(film)
     var crawl = film.opening_crawl;
     d3.select("#infoList")
     .append("h1")
-    .text(film.title + " ")
+    .text(film.title)
     .attr("style", "font-size: 40px; text-decoration: underline;")
-    var clicked = 0;
+    .append("span")
+    .attr("style", "font-size: 25px; text-decoration: none;")
+    .text(" (" + film.release_date + ")")
+
     d3.select("#infoList")
+    .attr("style", "border: solid #ffe81f 5px")
     .append("span")
     .text("Opening crawl")
     .attr("id", "opening_crawl_title")
@@ -327,6 +372,7 @@ var getInfoList = function(film)
         }
        )
 }
+
 
 var clearInfo = function(selector)
 {
