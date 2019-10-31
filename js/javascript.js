@@ -314,6 +314,7 @@ var getInfoList = function(film)
     d3.select("#infoList")
     .append("span")
     .text("Opening crawl")
+    .attr("id", "opening_crawl_title")
     .on("click", function(d)
         {
             clearInfo(".openingCrawl")
