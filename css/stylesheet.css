@@ -48,6 +48,7 @@ body
     border: solid #ffe81f 5px;
     clear: left;
     padding: 6px;
+    background-color: rgba(0, 0, 0, 0.79);
 }
 #infoList
 {
@@ -60,6 +61,7 @@ body
     overflow: auto;
     clear: right;
     padding: 6px;
+    background-color: rgba(0, 0, 0, 0.79);
 }
 #characterList
 {
@@ -69,6 +71,7 @@ body
     overflow: auto;
     clear: right;
     padding: 6px;
+    background-color: rgba(0, 0, 0, 0.79);
     
 }
 #light,#dark
@@ -79,15 +82,15 @@ body
 {
     color:lightblue;
     font-weight:bold;
-    width: 5%;
+    width: 10%;
     text-align: center;
-    cursor: url(oth25.cur), auto;
+    cursor: url(lightsaberblue.cur), auto;
 }
 #dark
 {
     color:red;
     font-weight: bold;
-    width: 5%;
+    width: 10%;
     text-align: center;
     cursor: url(darthmaulnormal.cur), auto;
 }
