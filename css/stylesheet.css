@@ -15,7 +15,7 @@ body
 @font-face
 {
     font-family: starJedi;
-    src: url(StarJedi.ttf);
+    src: url(STJEDISE.TTF);
 }
 #banner1
 {
@@ -23,17 +23,31 @@ body
 }
 #bannerTitle
 {
-    font-family: anakinmono;
+    font-family:starJedi ;
+    font-size: 60px;
+}
+#characterBanner
+{
+    padding-left: 12px;
+    margin-bottom: 0px;
+    margin-top: 4px;
+    font-size: 26px;
+}
+#releaseDate
+{
+    font-size: 24ps;
+    font-style: none;
 }
 #filmList
 {
     color: #ffe81f;
     font-size:25px;
-    font-family: anakinmono;
+    font-family: starJedi;
     width: 35%;
     display: inline-block;
     border: solid #ffe81f 5px;
     clear: left;
+    padding: 6px;
 }
 #infoList
 {
@@ -45,6 +59,7 @@ body
     width: 60%;
     overflow: auto;
     clear: right;
+    padding: 6px;
 }
 #characterList
 {
@@ -53,6 +68,7 @@ body
     width: 60%;
     overflow: auto;
     clear: right;
+    padding: 6px;
     
 }
 #light,#dark
@@ -83,7 +99,10 @@ body
 {
     background-color: #820000;
 }
-
+li
+{
+    font-size: 22px;
+}
 
 
 .WookieButton

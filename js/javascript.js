@@ -12,7 +12,7 @@ function(films)
 {   
     consoleFilms = films.results; // DO NOT USE FOR CODING; Works for console
     console.log(consoleFilms);
-    setBanner("STAR WARS API");
+    setBanner("STAR WARS APi");
     getFilmList(films.results);// Passes the actual array to the rest of the "films" in the program
     console.log("films", films)
     
@@ -284,7 +284,6 @@ var getFilmList = function(films)
     //.on("click", function(){alert("WORKS")}) 
     .on("click", function(film){
        console.log("clicked");
-       //getInfoList(films);
        if(film.episode_id == "4"){
             clearInfo("#infoList *");
             console.log("first movie in the list");
@@ -328,9 +327,10 @@ var getInfoList = function(film)
     d3.select("#infoList")
     .append("h1")
     .text(film.title)
-    .attr("style", "font-size: 40px; text-decoration: underline;")
-    .append("span")
+    .attr("style", "font-size: 40px; text-decoration: none;")
+    .append("p")
     .attr("style", "font-size: 25px; text-decoration: none;")
+    .attr("id", "releaseDate")
     .text(" (" + film.release_date + ")")
 
     d3.select("#infoList")
@@ -338,15 +338,11 @@ var getInfoList = function(film)
     .append("span")
     .text("Opening crawl")
     .attr("id", "opening_crawl_title")
-    .append("p")
-    .text("Director: " + film.director)
-    .append("p")
-    .text("Producer: " + film.producer)
     .on("click", function(d)
         {
             clearInfo(".openingCrawl")
         
-            d3.select("#infoList")//subject to change
+            d3.select("#opening_crawl_title")//subject to change
             .append("p")
             .text('"' + crawl + '"')
             .attr("class", "openingCrawl")
@@ -354,6 +350,12 @@ var getInfoList = function(film)
             
         }
        )
+    d3.select("#infoList")
+    .append("p")
+    .text("Director: " + film.director)
+    .append("p")
+    .text("Producer: " + film.producer)
+    
 }
 
 
