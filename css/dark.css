@@ -1,0 +1,137 @@
+body
+{
+    background-image: url("../imgs/starsbg.png");
+    color: #ffe81f;
+    cursor: url(darthmaulnormal.cur), auto;
+    font-family: anakinmono;
+    
+}
+
+@font-face
+{
+    font-family: anakinmono;
+    src: url(anakinmono.ttf);
+}
+@font-face
+{
+    font-family: starJedi;
+    src: url(STJEDISE.TTF);
+}
+#banner1
+{
+    text-align: center;
+}
+#bannerTitle
+{
+    font-family:starJedi ;
+    font-size: 60px;
+}
+#characterBanner
+{
+    padding-left: 12px;
+    margin-bottom: 0px;
+    margin-top: 4px;
+    font-size: 26px;
+}
+#releaseDate
+{
+    font-size: 24ps;
+    font-style: none;
+}
+#filmList
+{
+    color: #ffe81f;
+    font-size:25px;
+    font-family: starJedi;
+    width: 35%;
+    display: inline-block;
+    border: solid #ffe81f 5px;
+    clear: left;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.79);
+}
+#infoList
+{
+    color: #ffe81f;
+    font-size:20px;
+    font-family: anakinmono;
+    display: inline-block;
+    float: right;
+    width: 60%;
+    overflow: auto;
+    clear: right;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.79);
+}
+#characterList
+{
+    border: solid #ffe81f 5px;
+    float: right;
+    width: 60%;
+    overflow: auto;
+    clear: right;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.79);
+    
+}
+#light,#dark
+{
+    font-size: 25px;
+}
+#light
+{
+    color:lightblue;
+    font-weight:bold;
+    width: 10%;
+    text-align: center;
+    cursor: url(lightsaberblue.cur), auto;
+}
+#dark
+{
+    color:red;
+    font-weight: bold;
+    width: 10%;
+    text-align: center;
+    cursor: url(darthmaulnormal.cur), auto;
+}
+#light:hover
+{
+    background-color: royalblue;
+}
+#dark:hover
+{
+    background-color: #820000;
+}
+li
+{
+    font-size: 22px;
+}
+
+
+.WookieButton
+{
+    background-color: #4CAF50;
+    border: none;
+    color: #FEFEFE;
+    padding: 7.5px 16px;
+    text-align: center;
+    text-decoration: none;
+    margin: 16px 8px;
+    font-size: 18px;
+    clear: right;
+    font-family: fantasy;
+}
+
+.WookieButton:hover
+{
+    background-color: #3e8e41;
+}
+
+#filmTitle:hover
+{
+    background-color: rgb(255, 255, 255, .37)
+}
+#opening_crawl_title:hover
+{
+    background-color: rgb(255, 255, 255, .37)
+}
