@@ -2,6 +2,7 @@ var setBanner = function(message)
 {
     d3.select("#bannerTitle")
     .text(message)
+    .attr("style", "font-size:60px")
 }
 var consoleFilms = [];
 var filmPromise =
