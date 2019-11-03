@@ -15,7 +15,7 @@ function(films)
     setBanner("STAR WARS APi");
     getFilmList(films.results);// Passes the actual array to the rest of the "films" in the program
     console.log("films", films)
-    
+    //CHARACTER URLS BEGIN
     var charUrls0 = films.results[0].characters;
     console.log("charUrls0",charUrls0);
     
@@ -36,7 +36,70 @@ function(films)
     
     var charUrls6 = films.results[6].characters;
     console.log("charUrls6",charUrls6);
+    //SHIP URLS BEGIN
+    var shipUrls0 = films.results[0].starships;
+    console.log("shipUrls0",shipUrls0);
     
+    var shipUrls1 = films.results[1].starships;
+    console.log("shipUrls1",shipUrls1);
+    
+    var shipUrls2 = films.results[2].starships;
+    console.log("shipUrls2",shipUrls2);
+    
+    var shipUrls3 = films.results[3].starships;
+    console.log("shipUrls3",shipUrls3);
+    
+    var shipUrls4 = films.results[4].starships;
+    console.log("shipUrls4",shipUrls4);
+    
+    var shipUrls5 = films.results[5].starships;
+    console.log("shipUrls5",shipUrls5);
+    
+    var shipUrls6 = films.results[6].starships;
+    console.log("shipUrls6",shipUrls6);
+    //SHIP PROMISES BEGIN
+    var shipPromises = shipUrls0.map(function(shipUrls0) //maps the ship data for the specified movie to a json format that can be used by our program
+    {
+        console.log("shipPromises",shipPromises); 
+        return d3.json(shipUrls0);
+    })
+    
+    var shipPromises1 = shipUrls1.map(function(shipUrls1) //maps the ship data for the specified movie to a json format that can be used by our program
+    {
+        console.log("shipPromises1",shipPromises1); 
+        return d3.json(shipUrls1);
+    }) 
+
+    var shipPromises2 = shipUrls2.map(function(shipUrls2) //maps the ship data for the specified movie to a json format that can be used by our program
+    {
+        console.log("shipPromises2",shipPromises2); 
+        return d3.json(shipUrls2);
+    }) 
+    
+    var shipPromises3 = shipUrls3.map(function(shipUrls3) //maps the ship data for the specified movie to a json format that can be used by our program
+    {
+        console.log("shipPromises3",shipPromises3); 
+        return d3.json(shipUrls3);
+    }) 
+    
+    var shipPromises4 = shipUrls4.map(function(shipUrls4) //maps the ship data for the specified movie to a json format that can be used by our program
+    {
+        console.log("shipPromises4",shipPromises4); 
+        return d3.json(shipUrls4);
+    })
+    
+    var shipPromises5 = shipUrls5.map(function(shipUrls5) //maps the ship data for the specified movie to a json format that can be used by our program
+    {
+        console.log("shipPromises5",shipPromises5); 
+        return d3.json(shipUrls5);
+    })
+    
+    var shipPromises6 = shipUrls6.map(function(shipUrls6) //maps the ship data for the specified movie to a json format that can be used by our program
+    {
+        console.log("shipPromises6",shipPromises6); 
+        return d3.json(shipUrls6);
+    }) 
+    //CHARACTER PROMISES BEGIN
     var charPromises = charUrls0.map(function(charUrls0)
     {
         console.log("charPromises", charPromises);
@@ -79,12 +142,90 @@ function(films)
         console.log("charPromises6", charPromises6);
         return d3.json(charUrls6);       
     })
-     
+    //SHIP BIG PROMISES BEGIN 
+    Promise.all(shipPromises).then(function(values)
+    {
+        console.log("values",values);//gets the array of starships
+        d3.select("#filmList")
+        .on("click", function(d)
+        {
+        clearInfo("#shipName") //clears the starship name from previous films
+        d3.select("#starshipList")
+        .selectAll("li")
+        .data(values)
+        .enter()
+        .append("span")
+        .attr("id", "starships")
+        .append("ul")
+        .append("li")
+        .attr("id", "shipName")
+        .text(function(starship)
+        {
+            return starship.name
+        })/*
+        .append("ul")
+        .append("li")
+        .attr("id","shipModel")
+        .text(function(starship)
+        {
+            return starship.model    
+        })
+        .append("li")
+        .attr("id","shipCrew")*/
+        /*.text(function(starship)
+        {
+            return starship.crew    
+        })*/
+        })
+        d3.select("#characterTitle")
+        .selectAll("li")
+        .data(values)
+        .enter()
+        .on("click", function(characterArray)
+        {
+            console.log("clicked")
+            console.log("character array",characterArray)
+            characterArray.name.sort(function(a,b)
+            {
+                return a.name - b.name;
+                //if ((a.name) == (b.name))
+                //{return 0}
+                //if ((a.name) < (b.name))
+               //{return -1}
+                //if ((a.name) > (b.name))
+                //{return 1}
+            })
+        })
+    })
+    
+    Promise.all(shipPromises1).then(function(values)
+    {
+        console.log("values",values);//gets the array of characters
+        d3.select("#filmList")
+        .on("click", function(d){
+        clearInfo("#shipName") //clears the character name from previous films
+        d3.select("#starshipList")
+        .selectAll("li")
+        .data(values)
+        .enter()
+        .append("span")
+        .attr("id", "starships")
+        .append("ul")
+        .append("li")
+        .attr("id", "shipName")
+        .text(function(starship)
+        {
+            return starship.name
+        })
+        })
+        
+    })
+    //CHARACTER BIG PROMISES BEGIN 
     Promise.all(charPromises).then(function(values)
     {
         console.log("values",values);//gets the array of characters
         d3.select("#filmList")
-        .on("click", function(d)
+        .on("click", function(d) //when a film title in the film list is clicked do the following
         {
         clearInfo("#charName") //clears the character name from previous films
         d3.select("#characterList")
