@@ -74,6 +74,16 @@ body
     background-color: rgba(0, 0, 0, 0.79);
     
 }
+#starshipList
+{
+    border: solid #ffe81f 5px;
+    float: right;
+    width: 60%;
+    overflow: auto;
+    clear: right;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.79);
+}
 #light,#dark
 {
     font-size: 25px;

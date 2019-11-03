@@ -16,6 +16,8 @@ function(films)
     setBanner("STAR WARS APi");
     getFilmList(films.results);// Passes the actual array to the rest of the "films" in the program
     console.log("films", films)
+    lightCSS("../css/light.css")
+    darkCSS("../css/dark.css")
     //CHARACTER URLS BEGIN
     var charUrls0 = films.results[0].characters;
     console.log("charUrls0",charUrls0);
@@ -412,7 +414,23 @@ function(err)
     setBanner("The balance between light and dark has been broken! No films found")
     console.log("ERROR", err)
 })
+var lightCSS = function(sheet){
+    d3.select("#light")
+    .on("click", function(d)
+    {
+        d3.select("#pageStyleSheet")
+        .attr("href",sheet)
+    })
+}
 
+var darkCSS = function(sheet){
+    d3.select("#dark")
+    .on("click", function(d)
+    {
+        d3.select("#pageStyleSheet")
+        .attr("href",sheet)
+    })
+}
 var getFilmList = function(films)
 {
    d3.select("#filmList")
