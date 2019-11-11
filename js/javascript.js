@@ -146,7 +146,7 @@ function(films)
         return d3.json(charUrls6);       
     })
     //SHIP BIG PROMISES BEGIN 
-    Promise.all(shipPromises).then(function(values)
+   /* Promise.all(shipPromises).then(function(values)
     {
         console.log("values",values);//gets the array of starships
         d3.select("#filmList")
@@ -165,7 +165,7 @@ function(films)
         .text(function(starship)
         {
             return starship.name
-        })/*
+        })
         .append("ul")
         .append("li")
         .attr("id","shipModel")
@@ -174,11 +174,11 @@ function(films)
             return starship.model    
         })
         .append("li")
-        .attr("id","shipCrew")*/
-        /*.text(function(starship)
+        .attr("id","shipCrew")
+        .text(function(starship)
         {
             return starship.crew    
-        })*/
+        })
         })
         d3.select("#characterTitle")
         .selectAll("li")
@@ -222,7 +222,7 @@ function(films)
         })
         })
         
-    })
+    })*/
     //CHARACTER BIG PROMISES BEGIN 
     Promise.all(charPromises).then(function(values)
     {
