@@ -16,8 +16,8 @@ function(films)
     setBanner("STAR WARS APi");
     getFilmList(films.results);// Passes the actual array to the rest of the "films" in the program
     console.log("films", films)
-    lightCSS("../css/light.css")
-    darkCSS("../css/dark.css")
+    lightCSS("https://joshwest22.github.io/Web-API-Project/css/light.css")
+    darkCSS("https://joshwest22.github.io/Web-API-Project/css/dark.css")
     //CHARACTER URLS BEGIN
     var charUrls0 = films.results[0].characters;
     console.log("charUrls0",charUrls0);
