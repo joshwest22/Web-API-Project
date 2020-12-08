@@ -1,5 +1,5 @@
 # Web-API
-This was a project for CSC 160 Web Data & Design where we worked with an API to create an interactive site. We used a Star Wars API to display info about the Star Wars films.
+This was a project for CSC 160 Web Data & Design where we worked with an API to create an interactive site. We used a third party Star Wars API to display info about the Star Wars films. NOTE: The API may no longer be functional as it seems to load indefinitely from multiple computers across multiple attempts at different times.
 
 Below is the project assignment document:
 
